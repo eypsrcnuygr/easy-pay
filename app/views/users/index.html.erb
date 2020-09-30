@@ -12,11 +12,14 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <% if user == @current_user %>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
       </tr>
     <% end %>
+    <p>This is the logged in user: <%= @current_user.name %> </p>
   </tbody>
 </table>
 
@@ -24,3 +27,4 @@
 <% if current_user %>
 <%= link_to 'New User', login_path %>
 <%= link_to 'Logout', logout_path, method: :delete %>
+<% end %>

@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    @current_user = current_user
   end
 
   # GET /users/1

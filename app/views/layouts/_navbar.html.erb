@@ -13,7 +13,11 @@
         <% end %>
       </li>
       <li class="nav-item">
+        <% if logged_in? %>
         <%= link_to 'New Transaction', new_transaction_path, class: 'nav-link' %>
+        <% else %>
+        <%= link_to 'New Transaction', new_transaction_path, class: 'nav-link disabled' %>
+      <% end %>
       </li>
       <li class="nav-item">
         <% if logged_in? %>
