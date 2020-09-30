@@ -2,6 +2,16 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+<div>
+  <% @user.transactions.each do |transaction| %>
+  <ul>
+    <li>
+      <%= transaction.name %>
+    </li>
+  </ul>
+  
+  <% end %>
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit User', edit_user_path(@user) %> 
+<%= link_to "Go to Users' list", users_path %>

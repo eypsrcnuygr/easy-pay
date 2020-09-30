@@ -21,6 +21,6 @@
 </table>
 
 <br>
-
+<% if current_user %>
 <%= link_to 'New User', login_path %>
 <%= link_to 'Logout', logout_path, method: :delete %>
