@@ -19,7 +19,7 @@
       <% end %>
       </tr>
     <% end %>
-    <p>This is the logged in user: <%= @current_user.name %> </p>
+    <p>This is the logged in user: <%= @current_user.name if @current_user %> </p>
   </tbody>
 </table>
 
