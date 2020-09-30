@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :groups
   resources :transactions
-  resources :users
+  resources :users, except: %i[new]
   root to: 'pages#home'
+  get '/signup', to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy' 
