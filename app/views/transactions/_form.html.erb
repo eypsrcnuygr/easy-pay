@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<% if logged_in? %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -24,4 +24,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
 <% end %>
